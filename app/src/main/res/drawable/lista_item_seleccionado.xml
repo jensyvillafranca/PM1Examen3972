@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---Definiendo los colores para cuando el item este seleccionado o no de la lista-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Color cuando el ítem está seleccionado -->
+    <item android:state_selected="true" android:drawable="@color/gris" />
+    <!-- Color normal -->
+    <item android:drawable="@color/black"/>
+</selector>

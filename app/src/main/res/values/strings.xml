@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PM1Examen3972</string>
+    <string name="txtNombre">Ingrese su nombre</string>
+    <string name="txtTelefono">Ingrese su telefóno</string>
+    <string name="txtNotas">Digite sus comentarios</string>
+
+    <string-array name="items_spinner">
+        <item>Honduras (504)</item>
+        <item>Costa Rica (506)</item>
+        <item>Guatemala (502)</item>
+        <item>El Salvador (501)</item>
+    </string-array>
+</resources>
