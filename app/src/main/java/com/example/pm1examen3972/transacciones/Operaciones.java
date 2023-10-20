@@ -28,5 +28,5 @@ public class Operaciones {
     //Consultas de base de datos DML
     public static final String SelectTableContactos = "SELECT * FROM " + Operaciones.tabla;
 
-    //public static final String SelectTableContactos = "SELECT * FROM " + Operaciones.tabla;
+
 }
