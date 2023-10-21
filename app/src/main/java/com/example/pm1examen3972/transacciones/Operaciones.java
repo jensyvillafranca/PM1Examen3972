@@ -35,6 +35,6 @@ public class Operaciones {
                                                         //SELECT foto FROMcontactos WHERE id = 1;
     public static final String SelectPaisContacto = "SELECT pais, nombre, telefono, nota FROM " + Operaciones.tabla + " where id = "+ (ListaContactos.selectedItem+1);
 
-    public static final String SelectIdContactoUpdate = "SELECT id FROM " + Operaciones.tabla + " where id = "+ (ListaContactos.selectedItem+1);
+    //public static final String SelectIdContactoUpdate = "SELECT id FROM " + Operaciones.tabla + " where id = "+ ();
 
 }

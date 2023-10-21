@@ -1,6 +1,7 @@
 package com.example.pm1examen3972;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
@@ -75,15 +76,17 @@ public class ActivitySpinner extends AppCompatActivity {
                     valores.put("nombre", nuevoNombre);
                     valores.put("telefono", nuevoTelefono);
                     valores.put("nota", nuevaNota);
-                    valores.put("foto", "");
+                    //valores.put("foto", "");
 
                     try {
                         // Actualiza la base de datos con los nuevos valores
-                        Log.e("Mensaje", Operaciones.SelectIdContactoUpdate);
-                        int numRowsUpdated = db.update("contactos", valores, "id=?", new String[] { String.valueOf(Operaciones.SelectIdContactoUpdate)});
+                        //Log.e("Mensaje", Operaciones.SelectIdContactoUpdate);
+                        int numRowsUpdated = db.update("contactos", valores, "id=?", new String[] { String.valueOf(ListaContactos.selectedItem+1)});
 
                         if (numRowsUpdated > 0) {
                             Toast.makeText(ActivitySpinner.this, "Cambios guardados", Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(getApplicationContext(), ListaContactos.class);
+                            startActivity(intent);
                         } else {
                             Toast.makeText(ActivitySpinner.this, "No se encontró ningún registro para actualizar", Toast.LENGTH_LONG).show();
                         }
@@ -133,6 +136,8 @@ public class ActivitySpinner extends AppCompatActivity {
         nombreEditText.setText(nombre);
         telefonoEditText.setText(telefono);
         notaEditText.setText(nota);
+
+
     }
 
 

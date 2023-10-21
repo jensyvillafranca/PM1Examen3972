@@ -96,24 +96,10 @@ public class ListaContactos extends AppCompatActivity {
             lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                 @Override
                 public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                    /*Código para ver que item esta seleccionado*/
-                    /*if (position == 2) {
-
-                        Toast.makeText(getApplicationContext(), "Has mantenido presionado el Item 3", Toast.LENGTH_SHORT).show();
-
-                        ///estableciendo fondo al listview
-                        view.setBackgroundResource(R.drawable.lista_item_seleccionado);
 
 
-                    }*/
+                    data_selected=parent.getItemAtPosition(position).toString();
 
-                    /*ESTO PARA QUE SIRVE?
-                    for (int i = 0; i < parent.getChildCount(); i++) {
-                        View child = parent.getChildAt(i);
-                        child.setSelected(false);  Deselecciona todos los ítems
-                    }
-                    view.setSelected(true);  Selecciona el ítem mantenido presionado
-                    return true;*/
 
                     selectedItem = position; // Almacenamos la posición del ítem seleccionado
                     Log.e("Item Seleccionado Contacto",""+selectedItem);
@@ -209,11 +195,13 @@ public class ListaContactos extends AppCompatActivity {
             intent.putExtra("telefono", telefono);
             intent.putExtra("nota", nota);
 
+            cursor.close();
+            db.close();
+
             startActivity(intent);
         }
 
-        cursor.close();
-        db.close();
+
     }
 
     private void mostrarnumero(String data) {
