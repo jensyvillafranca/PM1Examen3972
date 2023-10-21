@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btncompartircontacto"
         android:layout_width="190dp"
         android:layout_height="46dp"
         android:layout_marginTop="30dp"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toBottomOf="@+id/listcontactos" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnverimagen"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="190dp"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/listcontactos" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btneliminarcontacto"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -46,10 +46,10 @@
         android:text="Eliminar Contacto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btncompartircontacto" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnactualizarcontacto"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="190dp"
@@ -57,5 +57,5 @@
         android:text="Actualizar Contacto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnverimagen" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,11 +1,14 @@
 package com.example.pm1examen3972;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -31,12 +34,16 @@ public class ListaContactos extends AppCompatActivity {
     ArrayList<String> arreglocontactos;
 
     //Variable para llevar el estado del item, es decir si esta seleccionado o no
-    private int selectedItem = -1;
+    public static int selectedItem = -1;
+
+    Button verImagen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
+        verImagen = (Button)findViewById(R.id.btnverimagen);
 
         try {
             //Establecer conexión a la base de datos
@@ -73,6 +80,7 @@ public class ListaContactos extends AppCompatActivity {
 
 
 
+
             lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                 @Override
                 public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -96,17 +104,30 @@ public class ListaContactos extends AppCompatActivity {
                     return true;*/
 
                     selectedItem = position; // Almacenamos la posición del ítem seleccionado
+                    Log.e("Hola",""+selectedItem);
                     
                     //Metodo para cambiar el fondo del item que esta seleccionado
                     actualizarListaFondo();
                     return true;
                 }
             });
+
+
+            verImagen.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), VerImagen.class);
+                    startActivity(intent);
+                }
+            });
+
+
         }
         catch (Exception ex)
         {
             ex.toString();
         }
+
     }
 
 
@@ -147,6 +168,7 @@ public class ListaContactos extends AppCompatActivity {
             contac.setNombre(cursor.getString(2));
             contac.setTelefono(cursor.getInt(3));
             contac.setNota(cursor.getString(4));
+            //contac.setFoto(cursor.getBlob(5));
 
             //Meter esos datos dentro de la lista
             listacontactos.add(contac);

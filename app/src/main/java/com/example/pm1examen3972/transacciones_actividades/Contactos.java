@@ -7,15 +7,17 @@ public class Contactos {
     private Integer telefono;
     private String nota;
 
+    private byte [] foto;
+
     //Clic derecho y generar para crear este constructor.
 
-
-    public Contactos(Integer id, String pais, String nombre, Integer telefono, String nota) {
+    public Contactos(Integer id, String pais, String nombre, Integer telefono, String nota, byte[] foto) {
         this.id = id;
         this.pais = pais;
         this.nombre = nombre;
         this.telefono = telefono;
         this.nota = nota;
+        this.foto = foto;
     }
 
     public Contactos() {
@@ -59,5 +61,13 @@ public class Contactos {
 
     public void setNota(String nota) {
         this.nota = nota;
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
     }
 }
