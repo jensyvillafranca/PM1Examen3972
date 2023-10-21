@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btncompartircontacto"
+        android:id="@+id/btncompartir"
         android:layout_width="190dp"
         android:layout_height="46dp"
         android:layout_marginTop="30dp"
@@ -46,7 +46,7 @@
         android:text="Eliminar Contacto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btncompartircontacto" />
+        app:layout_constraintTop_toBottomOf="@+id/btncompartir" />
 
     <Button
         android:id="@+id/btnactualizarcontacto"
